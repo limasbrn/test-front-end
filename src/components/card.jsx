@@ -1,71 +1,107 @@
-/* import { styled } from "@stitches/react"; */
-import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { styled } from "@stitches/react";
+import { useEffect, useState } from "react";
+import Modal from "./modal";
+import { LayoutBase, Button } from "./style";
 
-/* const Base = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  width: "250px",
-  minHeight: "222px",
-  height: "fit-content",
-
-  backgroundColor: "#FFFFFF",
-  boxShadow: "0 0 5px 0 rgba(0,0,0, 0.10)",
+const Input = styled("input", {
+  width: "200px",
+  height: "35px",
   borderRadius: "5px",
+  marginRight:"10px",
+  backgroundColor:"black",
+  border:"none",
+  transition: "ease-in-out .5s",
+  color:"white",
+  fontSize:"18px",
+  paddingLeft:"10px",
+
+  "&:focus": {
+    outline: "1px solid #00B6CD",
+    borderRadius: "30px",
+  },
 });
- */
-
-const fetcher = async () => {
-  try {
-    const response = await fetch("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const options = {
-  onSuccess: (data) => {
-    console.log(data);
-  },
-  onError: (error) => {
-    console.log(error);
-  },
-  retry: true,
-  refetchOnWindowFocus: false,
-};
-
+const FormLayout = styled("form", {
+  height: "fit-content",
+  padding:"30px",
+});
 
 export const Card = () => {
-  const { data, isLoading, isSuccess, isError, error } = useQuery(
-    ["characters"],
-    fetcher,
-    options
-  );
+  const [inputValue, setInputValue] = useState("");
+  const [data, setData] = useState({ results: [] });
+  const [search, setSearch] = useState("");
+  const [modal, setModal] = useState();
 
-  if (isLoading) {
-    return <div> Loading ...</div>;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSearch(data);
+  };
+
+  async function searchCharacter() {
+    try {
+      const response = await fetch(
+        `https://rickandmortyapi.com/api/character/?name=${inputValue}`
+      );
+      const data = await response.json();
+      localStorage.setItem("data", JSON.stringify(data));
+      setData(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  if (isError) {
-    return <div>{error.message}</div>;
-  }
+  useEffect(() => {
+    if (window.localStorage !== undefined) {
+      const data = window.localStorage.getItem("data");
 
-  if (isSuccess) {
-    return (
+      if (data !== null) {
+        setData(JSON.parse(data));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    searchCharacter();
+  }, [search]);
+
+  return (
+    <LayoutBase>
+      <FormLayout onSubmit={handleSubmit}>
+        <Input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <Button type="submit">Search Character</Button>
+      </FormLayout>
       <div>
         <ul>
           {data.results.map((item) => (
             <li key={item.id}>
-              <img src={item.image}/>
-              {item.name}</li>
+              <img alt={item.name} src={item.image} />
+              <h2>{item.name}</h2>
+              <button
+                onClick={() => {
+                  console.log(item.id);
+                  setModal(item.id);
+                }}
+              >
+                More info
+              </button>
+
+              {modal === item.id && (
+                <Modal
+                  onClose={() => setModal("")}
+                  image={item.image}
+                  name={item.name}
+                  species={item.species}
+                  origin={item.origin}
+                  location={item.location}
+                />
+              )}
+            </li>
           ))}
         </ul>
-        <button>Carregar mais personagens</button>
       </div>
-    );
-  }
-  return null;
+    </LayoutBase>
+  );
 };
