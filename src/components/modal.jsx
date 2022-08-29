@@ -2,66 +2,69 @@ import React from "react";
 import { styled } from "@stitches/react";
 
 const LayoutModal = styled("div", {
-  position: "fixed",
   display: "flex",
+  position: "fixed",
   top: "0",
   left: "0",
   width: "100vW",
   height: "100vh",
-  backgroundColor: "rgb(0,0,0,0.5)",
+  backgroundColor: "rgb(0,0,0,0.75)",
   justifyContent: "center",
   alignItems: "center",
 });
-
 const BaseModal = styled("div", {
   display: "flex",
-
   flexDirection: "row",
   width: "fit-content",
   minHeight: "222px",
   height: "fit-content",
-
+  overflow: "hidden",
+  borderRadius: "5px",
   backgroundColor: "#000000",
   color: "white",
-  borderRadius: "5px",
-  overflow: "hidden",
-
   outline: "1px solid #00B6CD",
 });
-
 const TextContainer = styled("div", {
-  flexDirection: "column",
-  padding: "15px",
   display: "flex",
-  gap: "10px",
+  flexDirection: "column",
   margin: "auto",
+  padding: "15px",
+  gap: "10px",
 });
-
 const TextP = styled("p", {
   fontSize: "20px",
   fontWeight: "lighter",
   color: "grey",
 });
-
 const TextTitle2 = styled("h2", {
   color: "#ACDD00",
 });
-
+const StatusText = styled("h4", {
+  variants: {
+    color: {
+      dead: { color: "#DF2222" },
+      alive: { color: "#ACDD00" },
+      unknwon: { color: "Gray" },
+    },
+  },
+});
+const DivStatus = styled("div", {
+  display:"flex",
+})
 const ButtonContainer = styled("div", {
   display: "flex",
-  padding: "15px",
   flexDirection: "column",
   alignItems: "center",
+  padding: "15px",
 });
-
 export const Button = styled("button", {
   width: "120px",
   height: "35px",
   borderRadius: "5px",
   backgroundColor: "#ACDD00",
+  border: "none",
   color: "Black",
   fontWeight: "bold",
-  border: "none",
   transition: "ease-in-out .5s",
 
   "&:hover": {
@@ -77,14 +80,22 @@ export const Modal = (props) => {
       <BaseModal>
         <img src={props.image} alt={props.name} />
         <TextContainer>
-          <TextTitle2>{props.name}</TextTitle2>
+          <div>
+            <TextTitle2>{props.name}</TextTitle2>
+            <DivStatus>
+              <span>Status | </span>
+              <StatusText color={props.status.toLowerCase()}>
+                {props.status}
+              </StatusText>
+            </DivStatus>
+          </div>
           <div>
             <span>Species: </span>
-            <TextP> {props.species}</TextP>
+            <TextP>{props.species}</TextP>
           </div>
           <div>
             <span>Origin:</span>
-            <TextP> {props.origin.name}</TextP>
+            <TextP>{props.origin.name}</TextP>
           </div>
           <div>
             <span>Current location:</span>
