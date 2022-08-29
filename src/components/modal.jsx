@@ -32,11 +32,11 @@ const TextContainer = styled("div", {
   gap: "10px",
 });
 const TextP = styled("p", {
-  fontSize: "20px",
+  fontSize: "16px",
   fontWeight: "lighter",
   color: "grey",
 });
-const TextTitle2 = styled("h2", {
+const TextTitle2 = styled("h3", {
   color: "#ACDD00",
 });
 const StatusText = styled("h4", {
@@ -58,8 +58,8 @@ const ButtonContainer = styled("div", {
   padding: "15px",
 });
 export const Button = styled("button", {
-  width: "120px",
-  height: "35px",
+  width: "100px",
+  height: "30px",
   borderRadius: "5px",
   backgroundColor: "#ACDD00",
   border: "none",

@@ -9,8 +9,8 @@ const LayoutBase = styled("div", {
   backgroundColor: "#0F0F0F",
 });
 const Input = styled("input", {
-  width: "250px",
-  height: "35px",
+  width: "200px",
+  height: "30px",
   borderRadius: "5px",
   marginRight: "10px",
   backgroundColor: "black",
@@ -71,8 +71,8 @@ const DetailsLayout = styled("div", {
   justifyContent: "space-between",
 });
 const SearchButton = styled("button", {
-  width: "120px",
-  height: "35px",
+  width: "100px",
+  height: "30px",
   borderRadius: "5px",
   backgroundColor: "#ACDD00",
   border: "none",
@@ -93,16 +93,19 @@ const LiButton = styled("button", {
   height: "fit-content",
   padding: "5px 10px",
   backgroundColor: "Black",
-  color: "White",
-  borderRadius: "30px",
+  color: "#ACDD00",
+  borderRadius: "5px",
   border: "1px solid #00B6CD",
+  transition: "ease-in-out .5s",
 
   "&:hover": {
     backgroundColor: "#00B6CD",
     color: "black",
     fontWeight: "bolder",
+    borderRadius: "30px",
   },
 });
+
 
 export const Card = () => {
   const [inputValue, setInputValue] = useState("");
@@ -145,7 +148,7 @@ export const Card = () => {
   return (
     <LayoutBase>
       <FormLayout onSubmit={handleSubmit}>
-        <h2>Search your Favorite character</h2>
+        <h3>Search your Favorite character</h3>
         <Input
           type="text"
           value={inputValue}
@@ -159,7 +162,7 @@ export const Card = () => {
             <LiLayout key={item.id}>
               <img alt={item.name} src={item.image} />
               <DetailsLayout>
-                <h2>{item.name}</h2>
+                <h3>{item.name}</h3>
                 <LiButton
                   onClick={() => {
                     console.log(item.id);
