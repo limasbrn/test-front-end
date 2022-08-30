@@ -83,7 +83,7 @@ export const Modal = (props) => {
           <div>
             <TextTitle2>{props.name}</TextTitle2>
             <DivStatus>
-              <span>Status | </span>
+              <span>Status: </span>
               <StatusText color={props.status.toLowerCase()}>
                 {props.status}
               </StatusText>

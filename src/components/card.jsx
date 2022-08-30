@@ -10,15 +10,15 @@ const LayoutBase = styled("div", {
 });
 const Input = styled("input", {
   width: "200px",
-  height: "30px",
-  borderRadius: "5px",
+  height: "35px",
+  paddingLeft: "10px",
   marginRight: "10px",
-  backgroundColor: "black",
   border: "none",
-  transition: "ease-in-out .5s",
+  borderRadius: "5px",
+  backgroundColor: "#0F0F0F",
   color: "white",
   fontSize: "18px",
-  paddingLeft: "10px",
+  transition: "ease-in-out .5s",
 
   "&:focus": {
     outline: "1px solid #00B6CD",
@@ -26,16 +26,19 @@ const Input = styled("input", {
   },
 });
 const FormLayout = styled("form", {
-  height: "fit-content",
-  padding: "30px",
-  display:"flex",
-  flexDirection:"column",
-  alignItems:"center",
-  gap:"10px",
-  color:"#00B6CD",
-  backgroundColor:"rgb(0, 0,0, 0.25)",
-  borderRadius:"7px",
+  display: "flex",
+  flexDirection: "row",
+  width: "84%",
+  padding:"30px 0px 0px",
 });
+const ContainerForm = styled("div", {
+  padding: "20px 30px",
+  height: "fit-content",
+  borderRadius: "7px",
+  gap: "15px",
+  color: "#00B6CD",
+  backgroundColor: "Black",
+})
 const ContentWrap = styled("div", {
   display: "flex",
   justifyContent: "center",
@@ -45,7 +48,6 @@ const ListaLayout = styled("ul", {
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gridAutoRows: "auto",
-
   gap: "30px",
   padding: "30px",
 });
@@ -54,10 +56,10 @@ const LiLayout = styled("li", {
   flexDirection: "column",
   width: "fit-content",
   height: "fit-content",
+  borderRadius: "7px",
   padding: "30px",
   backgroundColor: "Black",
   color: "White",
-  borderRadius: "7px",
   textDecoration: "none",
 
   "&:hover": {
@@ -67,16 +69,17 @@ const LiLayout = styled("li", {
 const DetailsLayout = styled("div", {
   display: "flex",
   flexDirection: "row",
-  padding: "15px 0px 0px",
+  padding: "15px 5px 5px",
   justifyContent: "space-between",
 });
 const SearchButton = styled("button", {
-  width: "100px",
-  height: "30px",
+  width: "fit-content",
+  height: "fit-content",
+  padding: "7px 20px",
   borderRadius: "5px",
-  backgroundColor: "#ACDD00",
   border: "none",
   color: "Black",
+  backgroundColor: "#ACDD00",
   fontWeight: "bold",
   transition: "ease-in-out .5s",
 
@@ -92,20 +95,17 @@ const LiButton = styled("button", {
   width: "fit-content",
   height: "fit-content",
   padding: "5px 10px",
-  backgroundColor: "Black",
-  color: "#ACDD00",
   borderRadius: "5px",
   border: "1px solid #00B6CD",
+  backgroundColor: "Black",
+  color: "#ACDD00",
   transition: "ease-in-out .5s",
 
   "&:hover": {
-    backgroundColor: "#00B6CD",
-    color: "black",
-    fontWeight: "bolder",
+    outline: "1px solid #00B6CD",
     borderRadius: "30px",
   },
 });
-
 
 export const Card = () => {
   const [inputValue, setInputValue] = useState("");
@@ -147,15 +147,20 @@ export const Card = () => {
 
   return (
     <LayoutBase>
+      {/*   Aqui 1º */}
       <FormLayout onSubmit={handleSubmit}>
-        <h3>Search your Favorite character</h3>
-        <Input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <SearchButton type="submit">Search</SearchButton>
+        <ContainerForm>
+          <h3>Search your Favorite character</h3>
+          <Input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <SearchButton type="submit">Search</SearchButton>
+        </ContainerForm>
       </FormLayout>
+      {/*   Aqui 1º */}
+
       <ContentWrap>
         <ListaLayout>
           {data.results.map((item) => (
@@ -188,6 +193,7 @@ export const Card = () => {
           ))}
         </ListaLayout>
       </ContentWrap>
+
     </LayoutBase>
   );
 };

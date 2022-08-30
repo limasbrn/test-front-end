@@ -4,8 +4,8 @@ import RickMorty from "../images/banner.jpg";
 const BannerBase = styled("div", {
   position: "relative",
   display: "flex",
-  height: "fit-content",
   width: "100%",
+  height: "fit-content",
 });
 const Image = styled("img", {
   width: "100%",
@@ -13,16 +13,16 @@ const Image = styled("img", {
 });
 const InfoLayout = styled("div", {
   display: "none",
+  width: "300px",
   flexDirection: "column",
   position: "absolute",
   left: "30px",
   bottom: "35px",
-  width: "300px",
   padding: "15px",
   borderRadius: "5px",
+  border: "1px solid #ACDD00",
   color: "#ACDD00",
   backgroundColor: "rgb(172, 221, 0, 0.1)",
-  border: "1px solid #ACDD00",
 
   "@media (min-width: 1145px)": {
     display: "flex",
@@ -37,9 +37,10 @@ const InfoLayoutMobile = styled("div", {
   width: "170px",
   padding: "10px",
   borderRadius: "5px",
+  border: "1px solid #ACDD00",
   color: "#ACDD00",
   backgroundColor: "rgb(172, 221, 0, 0.1)",
-  border: "1px solid #ACDD00",
+
   "@media (min-width: 725px)": {
     display: "flex",
   },
@@ -69,9 +70,9 @@ const SeasonLayout = styled("div", {
   width: "fit-content",
   padding: "15px",
   borderRadius: "5px",
+  border: "1px solid #ACDD00",
   color: "#ACDD00",
   backgroundColor: "rgb(172, 221, 0, 0.1)",
-  border: "1px solid #ACDD00",
 
   "@media (min-width: 680px)": {
     display: "flex",
@@ -82,9 +83,9 @@ const SeasonLayout = styled("div", {
   },
 });
 const Span = styled("span", {
+  textAlign: "justify",
   fontSize: "17px",
   fontWeight: "lighter",
-  textAlign: "justify",
 });
 
 export const Banner = () => (
@@ -98,7 +99,7 @@ export const Banner = () => (
       </Span>
     </InfoLayoutMobile>
     <InfoLayout>
-      <h2>Are you ready to to board this intergalactic travel?</h2>
+      <h2>Are you ready to board this intergalactic travel?</h2>
       <Span>
         Join the misadventures of the scientist Rick and his overly nervous
         grandson Morty, in their domestic family life and intergalactic travels.

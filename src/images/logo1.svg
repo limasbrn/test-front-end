@@ -1,26 +1,26 @@
 <svg width="332" height="332" viewBox="0 0 332 332" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M124.5 159C119.334 167.667 115 189.5 135 198C142.203 201.061 161.2 200.4 166 182C168.348 173 166.4 159.8 154 155" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M120.5 178C126.435 175.777 143.945 171.741 166.5 173.383" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<circle cx="143" cy="177.5" r="4.5" fill="#1D92A0"/>
-<path d="M125 205.5C129.333 209.333 141.7 214.7 156.5 205.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M164 200.5C163.167 209.5 163.5 227.5 171.5 227.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M131 241.5C127.833 245.667 124 254.4 134 256" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M136 248.5C137.833 246.167 147.6 241.3 172 240.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M171.5 143C164.865 145.934 145.388 150.664 126.5 146.107" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M141.5 134.5C147.5 135 162.9 133.5 172.5 129.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M153 128.5C156.333 128.167 165 128 173 123.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M173 101.5C159 100.667 128.6 106.8 119 138C109.4 169.2 113.667 222 117 244.5C119.593 262 131.7 294.8 172.5 294" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M173.5 66.5L173 294" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M173.5 66.5L159 86.5L107 39L117 111L55 102.5L99.5 158.5L59.5 168L99.5 203L72 222L99.5 230L94 256.5H117V274.5L124.5 269" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M113.5 211C110.167 211.167 103.3 213.2 102.5 220C101.5 228.5 108.5 234.5 115.5 237" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M139.5 247.5C140.833 249.667 143.6 253.9 148 253.5C149 253.333 151.5 251 150.5 247.5C152.5 246 155.4 245.9 155 243.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M173.5 274C185.5 273 212 265.2 226 242C230.833 233.667 238.4 210.9 230 186.5C219.5 156 190 140 172.5 142.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<circle cx="198" cy="192.5" r="22" stroke="#1D92A0" stroke-width="5"/>
-<path d="M173.5 247.5H186.5C188.167 247.667 191 247.3 189 244.5C186.5 241 179 239.5 174.5 239" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M186.5 159.5C191.667 160.833 203.5 163.7 209.5 164.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<circle cx="199.5" cy="192" r="3" fill="#1D92A0"/>
-<path d="M173.5 225C175.667 225.167 179.3 223.5 178.5 217.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M228 238.5C236.333 235.667 249.3 224.9 234.5 212.5" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<path d="M239.5 217.5C241.333 210 243.5 193.405 243.5 186.5C243.5 179 243.5 174.5 241.5 166C240.414 161.383 220 113.5 174.5 116" stroke="#1D92A0" stroke-width="5" stroke-linecap="round"/>
-<circle cx="166" cy="166" r="161" stroke="#1D92A0" stroke-width="10"/>
+<path d="M124.5 159C119.334 167.667 115 189.5 135 198C142.203 201.061 161.2 200.4 166 182C168.348 173 166.4 159.8 154 155" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M120.5 178C126.435 175.777 143.945 171.741 166.5 173.383" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<circle cx="143" cy="177.5" r="4.5" fill="#ACDD00"/>
+<path d="M125 205.5C129.333 209.333 141.7 214.7 156.5 205.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M164 200.5C163.167 209.5 163.5 227.5 171.5 227.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M131 241.5C127.833 245.667 124 254.4 134 256" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M136 248.5C137.833 246.167 147.6 241.3 172 240.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M171.5 143C164.865 145.934 145.388 150.664 126.5 146.107" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M141.5 134.5C147.5 135 162.9 133.5 172.5 129.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M153 128.5C156.333 128.167 165 128 173 123.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M173 101.5C159 100.667 128.6 106.8 119 138C109.4 169.2 113.667 222 117 244.5C119.593 262 131.7 294.8 172.5 294" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M173.5 66.5L173 294" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M173.5 66.5L159 86.5L107 39L117 111L55 102.5L99.5 158.5L59.5 168L99.5 203L72 222L99.5 230L94 256.5H117V274.5L124.5 269" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M113.5 211C110.167 211.167 103.3 213.2 102.5 220C101.5 228.5 108.5 234.5 115.5 237" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M139.5 247.5C140.833 249.667 143.6 253.9 148 253.5C149 253.333 151.5 251 150.5 247.5C152.5 246 155.4 245.9 155 243.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M173.5 274C185.5 273 212 265.2 226 242C230.833 233.667 238.4 210.9 230 186.5C219.5 156 190 140 172.5 142.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<circle cx="198" cy="192.5" r="22" stroke="#ACDD00" stroke-width="5"/>
+<path d="M173.5 247.5H186.5C188.167 247.667 191 247.3 189 244.5C186.5 241 179 239.5 174.5 239" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M186.5 159.5C191.667 160.833 203.5 163.7 209.5 164.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<circle cx="199.5" cy="192" r="3" fill="#ACDD00"/>
+<path d="M173.5 225C175.667 225.167 179.3 223.5 178.5 217.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M228 238.5C236.333 235.667 249.3 224.9 234.5 212.5" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<path d="M239.5 217.5C241.333 210 243.5 193.405 243.5 186.5C243.5 179 243.5 174.5 241.5 166C240.414 161.383 220 113.5 174.5 116" stroke="#ACDD00" stroke-width="5" stroke-linecap="round"/>
+<circle cx="166" cy="166" r="161" stroke="#ACDD00" stroke-width="10"/>
 </svg>

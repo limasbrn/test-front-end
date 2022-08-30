@@ -21,13 +21,12 @@ const HeaderBase = styled("header", {
   justifyContent: "space-between",
 });
 const ButtonNav = styled("button", {
-  width: "fit-content",
-  height: "fit-content",
-  padding: "5px 7px",
+  width: "100px",
+  height: "30px",
   borderRadius: "5px",
-  backgroundColor: "#ACDD00",
-  border: "none",
-  color: "Black",
+  border: "1px solid #00B6CD",
+  backgroundColor: "Black",
+  color: "#ACDD00",
   fontWeight: "bold",
   transition: "ease-in-out .5s",
 
@@ -42,10 +41,10 @@ const ImgBase = styled("img", {
   height: "auto",
 });
 const DivContainer = styled("div", {
-  justifyContent: "center",
-  padding: "15px 30px",
-  alignItems: "center",
   display: "flex",
+  padding: "15px 30px",
+  justifyContent: "center",
+  alignItems: "center",
   gap: "15px",
 });
 

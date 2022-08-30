@@ -6,11 +6,11 @@ const LayoutModal = styled("div", {
   position: "fixed",
   top: "0",
   left: "0",
+  justifyContent: "center",
+  alignItems: "center",
   width: "100vW",
   height: "100vh",
   backgroundColor: "rgb(0,0,0,0.75)",
-  justifyContent: "center",
-  alignItems: "center",
 });
 const BaseModal = styled("div", {
   display: "flex",
@@ -36,12 +36,12 @@ const TextTitle2 = styled("h2", {
   color: "#ACDD00",
 });
 export const Button = styled("button", {
-  width: "120px",
-  height: "35px",
+  width: "100px",
+  height: "30px",
   borderRadius: "5px",
-  backgroundColor: "#ACDD00",
   border: "none",
   marginTop: "15px",
+  backgroundColor: "#ACDD00",
   color: "Black",
   fontWeight: "bold",
   transition: "ease-in-out .5s",
