@@ -2,6 +2,7 @@ import { useState } from "react";
 import { styled } from "@stitches/react";
 import Logo from "../images/logo1.svg";
 import About from "./about";
+import Series from "./aboutSeries";
 
 const HeaderBase = styled("header", {
   display: "flex",
@@ -50,6 +51,7 @@ const DivContainer = styled("div", {
 
 export const Header = () => {
   const [modal, setModal] = useState(false);
+  const [series, setSeries] = useState(false);
 
   return (
     <HeaderBase>
@@ -60,7 +62,10 @@ export const Header = () => {
         </span>
       </DivContainer>
       <DivContainer>
-        <ButtonNav onClick={() => setModal(!modal)}>About this</ButtonNav>
+        <ButtonNav onClick={() => setSeries(!series)}>About the series</ButtonNav>
+        {series && <Series onClose={() => setSeries("")} />}
+        
+        <ButtonNav onClick={() => setModal(!modal)}>About this project</ButtonNav>
         {modal && <About onClose={() => setModal("")} />}
       </DivContainer>
     </HeaderBase>

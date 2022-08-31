@@ -25,20 +25,21 @@ const Input = styled("input", {
     borderRadius: "30px",
   },
 });
-const FormLayout = styled("form", {
+const FormLayout = styled("div", {
   display: "flex",
   flexDirection: "row",
   width: "84%",
-  padding:"30px 0px 0px",
+  padding: "30px 0px 0px",
+  gap: "15px",
 });
-const ContainerForm = styled("div", {
+const ContainerSelect = styled("div", {
   padding: "20px 30px",
   height: "fit-content",
   borderRadius: "7px",
   gap: "15px",
   color: "#00B6CD",
   backgroundColor: "Black",
-})
+});
 const ContentWrap = styled("div", {
   display: "flex",
   justifyContent: "center",
@@ -147,19 +148,23 @@ export const Card = () => {
 
   return (
     <LayoutBase>
-      {/*   Aqui 1º */}
-      <FormLayout onSubmit={handleSubmit}>
-        <ContainerForm>
-          <h3>Search your Favorite character</h3>
-          <Input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-          <SearchButton type="submit">Search</SearchButton>
-        </ContainerForm>
+      <FormLayout>
+        <ContainerSelect>
+          <form onSubmit={handleSubmit}>
+            <h3>Search your Favorite character</h3>
+            <Input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+            <SearchButton type="submit">Search</SearchButton>
+          </form>
+          <br />
+          <p> or </p>
+          <br />
+          <h3>Filter the characters by features</h3>
+        </ContainerSelect>
       </FormLayout>
-      {/*   Aqui 1º */}
 
       <ContentWrap>
         <ListaLayout>
@@ -193,7 +198,6 @@ export const Card = () => {
           ))}
         </ListaLayout>
       </ContentWrap>
-
     </LayoutBase>
   );
 };

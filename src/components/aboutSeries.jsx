@@ -28,9 +28,10 @@ const BaseModal = styled("div", {
   color: "Gray",
   outline: "1px solid #00B6CD",
 });
-const LinkPage = styled("a", {
-  textDecoration: "none",
-  color: "#00B6CD",
+const InfoContainer = styled("div", {
+  display: "flex",
+  width :"100%",
+  flexDirection:"column",
 });
 const TextTitle2 = styled("h2", {
   color: "#ACDD00",
@@ -57,28 +58,23 @@ export const About = (props) => {
   return (
     <LayoutModal>
       <BaseModal>
-        <TextTitle2>About this project</TextTitle2>
-        <h4>Created by Sabrina Silva</h4>
+        <TextTitle2>Ricky $ Morty</TextTitle2>
+        <h4>Created by Dan Harmon, Justin Roiland</h4>
         <p>
-          This project was developed with React Js and styled with Stiches. The
-          application uses the data base available in {" "}
-          <LinkPage href="https://rickandmortyapi.com/">
-            this address
-          </LinkPage>{" "}
-          and utilizes the data as a resource to accomplish the following tasks:
+          Join the misadventures of the scientist Rick and his overly nervous
+          grandson Morty, in their domestic family life and intergalactic
+          travels.
         </p>
-        <ul>
-          <li>
-            - Fetch at least once the data available in this{" "}
-            <LinkPage href="https://rickandmortyapi.com/">link</LinkPage>;
-          </li>
-          <li>- Search area;</li>
-          <li>- Display the characters;</li>
-          <li>
-            - On click display a more detailed modal about the characters;
-          </li>
-        </ul>
-        <h5>Check the code in <LinkPage href="https://github.com/limasbrn/test-front-end">this repository</LinkPage> .</h5>
+        <InfoContainer>
+          <h4>Seasons:</h4>
+          <span>The sixth season will be available from the 4th of September.</span>
+          <h4>Number of Characters:</h4>
+          <span>826 characters</span>
+          <h4>Locations:</h4>
+          <span>126 locations</span>
+          <h5>Disclaimer: The number may change in occurency of the new season.</h5>
+        </InfoContainer>
+
         <Button onClick={props.onClose}>Close</Button>
       </BaseModal>
     </LayoutModal>
