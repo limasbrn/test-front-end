@@ -39,15 +39,6 @@ const TextP = styled("p", {
 const TextTitle2 = styled("h3", {
   color: "#ACDD00",
 });
-const StatusText = styled("h4", {
-  variants: {
-    color: {
-      dead: { color: "#DF2222" },
-      alive: { color: "#ACDD00" },
-      unknwon: { color: "Gray" },
-    },
-  },
-});
 const DivStatus = styled("div", {
   display:"flex",
 })
@@ -83,10 +74,9 @@ export const Modal = (props) => {
           <div>
             <TextTitle2>{props.name}</TextTitle2>
             <DivStatus>
-              <span>Status: </span>
-              <StatusText color={props.status.toLowerCase()}>
-                {props.status}
-              </StatusText>
+              <TextP color={props.gender.toLowerCase()}>
+                {props.gender}
+              </TextP>
             </DivStatus>
           </div>
           <div>

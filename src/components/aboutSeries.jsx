@@ -15,7 +15,7 @@ const LayoutModal = styled("div", {
 const BaseModal = styled("div", {
   display: "flex",
   padding: "30px",
-  maxWidth: "370px",
+  maxWidth: "450px",
   width: "fit-content",
   height: "fit-content",
   flexDirection: "column",
@@ -61,9 +61,7 @@ export const AboutSeries = (props) => {
         <TextTitle2>Ricky $ Morty</TextTitle2>
         <h4>Created by Dan Harmon, Justin Roiland</h4>
         <p>
-          Join the misadventures of the scientist Rick and his overly nervous
-          grandson Morty, in their domestic family life and intergalactic
-          travels.
+        Rick Sanchez, a depressed, alcoholic, madman (who also happens to be a genius scientist with the ability to travel through dimensions) returns to his daughter Beth's life after two decades of being silent between the two. He finds her married to a man named Jerry, and the couple has two teenage kids. Summer, the oldest girl, and Morty, the youngest child and a boy, is an anxious, quiet, and sweet kid. Rick makes Morty his sidekick and takes him on hilarious Interdimensional adventures, causing poor Morty to become steadily more miserable due to Rick's insane and careless additude.
         </p>
         <InfoContainer>
           <h4>Seasons:</h4>

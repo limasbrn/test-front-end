@@ -47,6 +47,15 @@ const ContentWrap = styled("div", {
   justifyContent: "center",
   alignItems: "center",
 });
+const StatusText = styled("h4", {
+  variants: {
+    color: {
+      dead: { color: "#DF2222" },
+      alive: { color: "#ACDD00" },
+      unknwon: { color: "Gray" },
+    },
+  },
+});
 const ListaLayout = styled("ul", {
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
@@ -74,6 +83,7 @@ const DetailsLayout = styled("div", {
   flexDirection: "row",
   padding: "15px 5px 5px",
   justifyContent: "space-between",
+  alignItems: "center",
 });
 const SearchButton = styled("button", {
   width: "fit-content",
@@ -120,7 +130,7 @@ export const Card = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchCharacter()
+    searchCharacter();
   };
 
   let api = `https://rickandmortyapi.com/api/character/?name=${inputValue}&status=${status}&species=${species}&gender=${gender}`;
@@ -166,7 +176,11 @@ export const Card = () => {
           <br />
           <p> or </p>
           <br />
-          <Filter setStatus={setStatus} setSpecies={setSpecies} setGender={setGender}/>
+          <Filter
+            setStatus={setStatus}
+            setSpecies={setSpecies}
+            setGender={setGender}
+          />
         </ContainerSelect>
       </FormLayout>
 
@@ -176,7 +190,12 @@ export const Card = () => {
             <LiLayout key={item.id}>
               <img alt={item.name} src={item.image} />
               <DetailsLayout>
-                <h3>{item.name}</h3>
+                <div>
+                  <h3>{item.name}</h3>
+                  <StatusText color={item.status.toLowerCase()}>
+                    {item.status}
+                  </StatusText>
+                </div>
                 <LiButton
                   onClick={() => {
                     console.log(item.id);
@@ -192,7 +211,7 @@ export const Card = () => {
                   onClose={() => setModal("")}
                   image={item.image}
                   name={item.name}
-                  status={item.status}
+                  gender={item.gender}
                   species={item.species}
                   origin={item.origin}
                   location={item.location}
