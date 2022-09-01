@@ -1,6 +1,7 @@
 import { styled } from "@stitches/react";
 import { useEffect, useState } from "react";
 import Modal from "./modal";
+import Filter from "./Filters/filter";
 
 const LayoutBase = styled("div", {
   display: "flex",
@@ -33,11 +34,12 @@ const FormLayout = styled("div", {
   gap: "15px",
 });
 const ContainerSelect = styled("div", {
+  display: "flex",
   padding: "20px 30px",
   height: "fit-content",
   borderRadius: "7px",
   gap: "15px",
-  color: "#00B6CD",
+  color: "Gray",
   backgroundColor: "Black",
 });
 const ContentWrap = styled("div", {
@@ -111,19 +113,21 @@ const LiButton = styled("button", {
 export const Card = () => {
   const [inputValue, setInputValue] = useState("");
   const [data, setData] = useState({ results: [] });
-  const [search, setSearch] = useState("");
   const [modal, setModal] = useState();
+  const [status, setStatus] = useState("");
+  const [species, setSpecies] = useState("");
+  const [gender, setGender] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearch(data);
+    searchCharacter()
   };
+
+  let api = `https://rickandmortyapi.com/api/character/?name=${inputValue}&status=${status}&species=${species}&gender=${gender}`;
 
   async function searchCharacter() {
     try {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/?name=${inputValue}`
-      );
+      const response = await fetch(api);
       const data = await response.json();
       localStorage.setItem("data", JSON.stringify(data));
       setData(data);
@@ -144,7 +148,7 @@ export const Card = () => {
 
   useEffect(() => {
     searchCharacter();
-  }, [search]);
+  }, [status, species, gender]);
 
   return (
     <LayoutBase>
@@ -162,7 +166,7 @@ export const Card = () => {
           <br />
           <p> or </p>
           <br />
-          <h3>Filter the characters by features</h3>
+          <Filter setStatus={setStatus} setSpecies={setSpecies} setGender={setGender}/>
         </ContainerSelect>
       </FormLayout>
 

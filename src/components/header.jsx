@@ -22,7 +22,7 @@ const HeaderBase = styled("header", {
   justifyContent: "space-between",
 });
 const ButtonNav = styled("button", {
-  width: "100px",
+  width: "120px",
   height: "30px",
   borderRadius: "5px",
   border: "1px solid #00B6CD",

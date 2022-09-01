@@ -54,7 +54,7 @@ export const Button = styled("button", {
   },
 });
 
-export const About = (props) => {
+export const AboutSeries = (props) => {
   return (
     <LayoutModal>
       <BaseModal>
@@ -81,4 +81,4 @@ export const About = (props) => {
   );
 };
 
-export default About;
+export default AboutSeries;
