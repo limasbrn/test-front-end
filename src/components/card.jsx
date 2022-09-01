@@ -2,6 +2,7 @@ import { styled } from "@stitches/react";
 import { useEffect, useState } from "react";
 import Modal from "./modal";
 import Filter from "./Filters/filter";
+import Pagination from "./Pagination/pagination";
 
 const LayoutBase = styled("div", {
   display: "flex",
@@ -127,13 +128,14 @@ export const Card = () => {
   const [status, setStatus] = useState("");
   const [species, setSpecies] = useState("");
   const [gender, setGender] = useState("");
+  const [pageNumber, setPageNumber] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     searchCharacter();
   };
 
-  let api = `https://rickandmortyapi.com/api/character/?name=${inputValue}&status=${status}&species=${species}&gender=${gender}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&?name=${inputValue}&status=${status}&species=${species}&gender=${gender}`;
 
   async function searchCharacter() {
     try {
@@ -158,7 +160,7 @@ export const Card = () => {
 
   useEffect(() => {
     searchCharacter();
-  }, [status, species, gender]);
+  }, [status, species, gender, pageNumber]);
 
   return (
     <LayoutBase>
@@ -221,6 +223,7 @@ export const Card = () => {
           ))}
         </ListaLayout>
       </ContentWrap>
+      <Pagination info={data.info} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </LayoutBase>
   );
 };

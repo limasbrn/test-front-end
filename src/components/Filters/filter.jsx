@@ -29,6 +29,12 @@ const Span = styled("span", {
 });
 
 export const Filter = ({ setStatus, setSpecies, setGender }) => {
+  let clear = () => {
+    setStatus("");
+    setSpecies("");
+    setGender("");
+    window.location.reload(false);
+  };
   return (
     <LayoutFilters>
       <h3>Filter the characters by features</h3>
@@ -37,7 +43,7 @@ export const Filter = ({ setStatus, setSpecies, setGender }) => {
         <Gender setGender={setGender} />
         <Species setSpecies={setSpecies} />
       </BigFilterCont>
-      <Span>Clear filters</Span>
+      <Span onClick={clear}>Clear filters</Span>
     </LayoutFilters>
   );
 };
