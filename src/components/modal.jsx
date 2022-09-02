@@ -14,7 +14,7 @@ const LayoutModal = styled("div", {
 });
 const BaseModal = styled("div", {
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column",
   width: "fit-content",
   minHeight: "222px",
   height: "fit-content",
@@ -23,6 +23,11 @@ const BaseModal = styled("div", {
   backgroundColor: "#000000",
   color: "white",
   outline: "1px solid #00B6CD",
+
+  "@media (min-width: 500px)": {
+    flexDirection: "row",
+  },
+
 });
 const TextContainer = styled("div", {
   display: "flex",

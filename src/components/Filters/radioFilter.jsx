@@ -1,6 +1,7 @@
 import React from "react";
 
-const RadioFilter = ({ name, index, value, setValue, }) => {
+const RadioFilter = ({ name, index, value, setValue }) => {
+    
   return (
     <div>
       <input
@@ -12,7 +13,11 @@ const RadioFilter = ({ name, index, value, setValue, }) => {
         id={`${name}-${index}`}
       />
       <label htmlFor={`${name}-${index}`}> {value} </label>
+      
     </div>
+
+
+
   );
 };
 

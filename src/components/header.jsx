@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { styled } from "@stitches/react";
 import Logo from "../images/logo1.svg";
+import LogoMobile from "../images/Rick-And-Morty-Logo.png";
 import About from "./about";
 import Series from "./aboutSeries";
 
@@ -38,15 +39,39 @@ const ButtonNav = styled("button", {
   },
 });
 const ImgBase = styled("img", {
+  display: "none",
   width: "60px",
   height: "auto",
+
+  "@media (min-width: 630px)": {
+    display: "flex",
+  },
+});
+const ImgBaseMobile = styled("img", {
+  display:"flex",
+  width: "120px",
+  height: "auto",
+  "@media (min-width: 630px)": {
+    display: "none",
+  },
 });
 const DivContainer = styled("div", {
   display: "flex",
+  flexDirection: "column",
   padding: "15px 30px",
   justifyContent: "center",
   alignItems: "center",
   gap: "15px",
+
+  "@media (min-width: 630px)": {
+    flexDirection: "row",
+  },
+});
+const SpanTitle = styled("span", {
+  display: "none",
+  "@media (min-width: 630px)": {
+    display: "flex",
+  },
 });
 
 export const Header = () => {
@@ -57,15 +82,20 @@ export const Header = () => {
     <HeaderBase>
       <DivContainer>
         <ImgBase src={Logo} />
-        <span>
+        <ImgBaseMobile src={LogoMobile} />
+        <SpanTitle>
           <strong>Rick & Morty</strong> | The search app
-        </span>
+        </SpanTitle>
       </DivContainer>
       <DivContainer>
-        <ButtonNav onClick={() => setSeries(!series)}>About the series</ButtonNav>
+        <ButtonNav onClick={() => setSeries(!series)}>
+          About the series
+        </ButtonNav>
         {series && <Series onClose={() => setSeries("")} />}
-        
-        <ButtonNav onClick={() => setModal(!modal)}>About this project</ButtonNav>
+
+        <ButtonNav onClick={() => setModal(!modal)}>
+          About this project
+        </ButtonNav>
         {modal && <About onClose={() => setModal("")} />}
       </DivContainer>
     </HeaderBase>

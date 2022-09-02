@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/error-message": "^2.0.0",
     "@stitches/react": "^1.2.8",
     "@tanstack/react-query": "^4.2.3",
     "@testing-library/jest-dom": "^5.16.5",

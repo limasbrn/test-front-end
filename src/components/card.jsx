@@ -29,19 +29,33 @@ const Input = styled("input", {
 });
 const FormLayout = styled("div", {
   display: "flex",
-  flexDirection: "row",
-  width: "84%",
+  width: "100%",
   padding: "30px 0px 0px",
   gap: "15px",
+  justifyContent: "center",
+  fontSize: "22px",
+
+  "@media (min-width: 470px)": {
+    width: "84%",
+  },
+  "@media (min-width: 770px)": {
+    fontSize: "16px",
+  },
 });
 const ContainerSelect = styled("div", {
   display: "flex",
+  flexDirection: "column",
   padding: "20px 30px",
   height: "fit-content",
   borderRadius: "7px",
   gap: "15px",
   color: "Gray",
+  justifyContent: "center",
   backgroundColor: "Black",
+
+  "@media (min-width: 770px)": {
+    flexDirection: "row",
+  },
 });
 const ContentWrap = styled("div", {
   display: "flex",
@@ -59,10 +73,18 @@ const StatusText = styled("h4", {
 });
 const ListaLayout = styled("ul", {
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
+  gridTemplateColumns: "repeat(1, 1fr)",
   gridAutoRows: "auto",
   gap: "30px",
   padding: "30px",
+  justifyItems: "center",
+
+  "@media (min-width: 815px)": {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
+  "@media (min-width: 1200px)": {
+    gridTemplateColumns: "repeat(3, 1fr)",
+  },
 });
 const LiLayout = styled("li", {
   display: "flex",
@@ -126,7 +148,6 @@ export const Card = () => {
   const [data, setData] = useState({ results: [] });
   const [modal, setModal] = useState();
   const [status, setStatus] = useState("");
-  const [species, setSpecies] = useState("");
   const [gender, setGender] = useState("");
   const [pageNumber, setPageNumber] = useState("");
 
@@ -135,7 +156,7 @@ export const Card = () => {
     searchCharacter();
   };
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&?name=${inputValue}&status=${status}&species=${species}&gender=${gender}`;
+  let api = `https://rickandmortyapi.com/api/character/?name=${inputValue}&status=${status}&gender=${gender}&page=${pageNumber}`;
 
   async function searchCharacter() {
     try {
@@ -160,7 +181,7 @@ export const Card = () => {
 
   useEffect(() => {
     searchCharacter();
-  }, [status, species, gender, pageNumber]);
+  }, [status, gender, pageNumber]);
 
   return (
     <LayoutBase>
@@ -175,14 +196,10 @@ export const Card = () => {
             />
             <SearchButton type="submit">Search</SearchButton>
           </form>
-          <br />
+
           <p> or </p>
-          <br />
-          <Filter
-            setStatus={setStatus}
-            setSpecies={setSpecies}
-            setGender={setGender}
-          />
+
+          <Filter setStatus={setStatus} setGender={setGender} />
         </ContainerSelect>
       </FormLayout>
 
@@ -223,7 +240,11 @@ export const Card = () => {
           ))}
         </ListaLayout>
       </ContentWrap>
-      <Pagination info={data.info} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <Pagination
+        info={data.info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </LayoutBase>
   );
 };

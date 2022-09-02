@@ -2,22 +2,16 @@ import React from "react";
 import { styled } from "@stitches/react";
 import Status from "./Category/status";
 import Gender from "./Category/gender";
-import Species from "./Category/species";
 
 const LayoutFilters = styled("div", {
   display: "flex",
   flexDirection: "column",
+  fontSize:"22px",
   gap: "10px",
-});
-const InputRadio = styled("input", {
-  color: "Gray",
-});
-const FilterContainer = styled("div", {
-  width: "fit-content",
-  height: "fit-content",
-  padding: "5px",
-  border: "1px solid #00B6CD",
-  borderRadius: "7px",
+
+  "@media (min-width: 770px)": {
+    fontSize:"16px",
+  },
 });
 const BigFilterCont = styled("div", {
   display: "flex",
@@ -28,10 +22,9 @@ const Span = styled("span", {
   color: "#ACDD00",
 });
 
-export const Filter = ({ setStatus, setSpecies, setGender }) => {
+export const Filter = ({ setStatus, setGender }) => {
   let clear = () => {
     setStatus("");
-    setSpecies("");
     setGender("");
     window.location.reload(false);
   };
@@ -41,7 +34,6 @@ export const Filter = ({ setStatus, setSpecies, setGender }) => {
       <BigFilterCont>
         <Status setStatus={setStatus} />
         <Gender setGender={setGender} />
-        <Species setSpecies={setSpecies} />
       </BigFilterCont>
       <Span onClick={clear}>Clear filters</Span>
     </LayoutFilters>

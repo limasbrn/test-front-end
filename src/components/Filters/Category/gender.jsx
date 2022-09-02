@@ -11,7 +11,7 @@ const FilterContainer = styled("div", {
 });
 
 const Gender = ({setGender}) => {
-  let gender = ["Female", "Male", "Genderless", "Unknwon"];
+  let gender = ["Female", "Male", "Genderless"];
   return (
     <FilterContainer>
       {gender.map((item, index) => (
