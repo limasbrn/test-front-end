@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Modal from "../modal";
+import ModalCard from "../modal";
 import Filter from "../Filters/filter";
 import Pagination from "../Pagination/pagination";
 import {
@@ -98,7 +98,7 @@ export const Main = () => {
               </DetailsLayout>
 
               {modal === item.id && (
-                <Modal
+                <ModalCard
                   onClose={() => setModal("")}
                   image={item.image}
                   name={item.name}

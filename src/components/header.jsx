@@ -1,78 +1,16 @@
 import { useState } from "react";
-import { styled } from "@stitches/react";
 import Logo from "../images/logo1.svg";
 import LogoMobile from "../images/Rick-And-Morty-Logo.png";
 import About from "./about/about";
 import Series from "./about/aboutSeries";
-
-const HeaderBase = styled("header", {
-  display: "flex",
-  position: "sticky",
-  top: "0",
-  left: "0",
-  height: "fit-content",
-  width: "100%",
-  zIndex: "10",
-
-  backgroundColor: "#000000",
-  color: "#1D92A0",
-  boxShadow: "0px 0px 15px 0 rgba(5,255,0, 0.5)",
-  outline: "1px solid #00B6CD",
-
-  alignItems: "center",
-  justifyContent: "space-between",
-});
-const ButtonNav = styled("button", {
-  width: "120px",
-  height: "30px",
-  borderRadius: "5px",
-  border: "1px solid #00B6CD",
-  backgroundColor: "Black",
-  color: "#ACDD00",
-  fontWeight: "bold",
-  transition: "ease-in-out .5s",
-
-  "&:hover": {
-    boxShadow: "0px 0px 15px 0 rgba(5,255,0, 0.5)",
-    outline: "1px solid #00B6CD",
-    borderRadius: "30px",
-  },
-});
-const ImgBase = styled("img", {
-  display: "none",
-  width: "60px",
-  height: "auto",
-
-  "@media (min-width: 630px)": {
-    display: "flex",
-  },
-});
-const ImgBaseMobile = styled("img", {
-  display:"flex",
-  width: "120px",
-  height: "auto",
-  "@media (min-width: 630px)": {
-    display: "none",
-  },
-});
-const DivContainer = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  padding: "15px 30px",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "15px",
-
-  "@media (min-width: 630px)": {
-    flexDirection: "row",
-  },
-});
-const SpanTitle = styled("span", {
-  display: "none",
-  "@media (min-width: 630px)": {
-    display: "flex",
-  },
-});
+import {
+  HeaderBase,
+  ButtonNav,
+  ImgBaseHeader,
+  ImgBaseMobile,
+  DivContainer,
+  SpanTitle,
+} from "./style";
 
 export const Header = () => {
   const [modal, setModal] = useState(false);
@@ -81,7 +19,7 @@ export const Header = () => {
   return (
     <HeaderBase>
       <DivContainer>
-        <ImgBase src={Logo} />
+        <ImgBaseHeader src={Logo} />
         <ImgBaseMobile src={LogoMobile} />
         <SpanTitle>
           <strong>Rick & Morty</strong> | The search app
