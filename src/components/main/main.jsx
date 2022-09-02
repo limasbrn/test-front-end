@@ -6,6 +6,7 @@ import {
   LayoutBase,
   Input,
   FormLayout,
+  Form,
   ContainerSelect,
   ContentWrap,
   StatusText,
@@ -61,7 +62,7 @@ export const Main = () => {
     <LayoutBase>
       <FormLayout>
         <ContainerSelect>
-          <form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <h3>Search your Favorite character</h3>
             <Input
               type="text"
@@ -69,7 +70,7 @@ export const Main = () => {
               onChange={(e) => setInputValue(e.target.value)}
             />
             <SearchButton type="submit">Search</SearchButton>
-          </form>
+          </Form>
           <p> or </p>
           <Filter setStatus={setStatus} setGender={setGender} />
         </ContainerSelect>

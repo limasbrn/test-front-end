@@ -38,6 +38,9 @@ export const FormLayout = styled("div", {
     fontSize: "16px",
   },
 });
+export const Form = styled("form", {
+  padding:"10px",
+});
 export const ContainerSelect = styled("div", {
   display: "flex",
   flexDirection: "column",
