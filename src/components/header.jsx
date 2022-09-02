@@ -2,8 +2,8 @@ import { useState } from "react";
 import { styled } from "@stitches/react";
 import Logo from "../images/logo1.svg";
 import LogoMobile from "../images/Rick-And-Morty-Logo.png";
-import About from "./about";
-import Series from "./aboutSeries";
+import About from "./about/about";
+import Series from "./about/aboutSeries";
 
 const HeaderBase = styled("header", {
   display: "flex",
